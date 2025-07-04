@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quote Display</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .quote-box {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 500px;
+      text-align: center;
+    }
+
+    .quote {
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #333;
+    }
+
+    .author {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="quote-box">
+    <h1>Quote after every 2 second</h1>
+    <div id="text" class="quote">"Believe you can and you're halfway there."</div>
+    <button id="btn" style="font-size: larger; background-color: black; color: white; border-radius: 10px;padding: 10px; margin-top: 10px;">Genrate Quote</button>
+  </div>
+
+  <script src="./project.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+body{
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#red{
+    border : 2px solid black;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    background-color: red;
+}
+
+#blue{
+    border : 2px solid black;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    background-color: blue;
+}
+#green{
+    border : 2px solid black;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    background-color: green;
+}
+#pink{
+    border : 2px solid black;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    background-color: pink;
+}
+#yellow{
+    border : 2px solid black;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    background-color: yellow;
+}
