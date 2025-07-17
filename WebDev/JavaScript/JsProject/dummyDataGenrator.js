@@ -11,7 +11,7 @@
 // 9 . alchohol servers 
 // 10 . open time 
 // 11 . close time
-const restaurantNames = [
+const restaurantNames = [ 
   "The Spice Route",
   "Ocean's Delight",
   "The Golden Fork",
