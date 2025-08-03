@@ -1,0 +1,17 @@
+{
+  "name": "day03",
+  "version": "1.0.0",
+  "description": "//we will learn about the initlising of the parcel and using the react",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "parcel": "^2.15.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}

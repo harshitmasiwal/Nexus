@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.box{
+    margin-top: 200px;
+    padding: 20px;
+    background-color: white;
+    height: 200px;
+    width: 500px;
+}
+
+.options{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn{
+    font-size: large;
+    background-color: black;
+    color: white;
+}
+
+.box2{
+    background-color: white;
+    
+}

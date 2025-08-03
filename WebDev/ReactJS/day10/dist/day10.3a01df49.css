@@ -1,0 +1,38 @@
+body {
+  color: #fff;
+  background-color: #000;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+}
+
+.box {
+  background-color: #1e1e1e;
+  padding: 100px;
+}
+
+button {
+  background-color: #0ff;
+  border: 2px solid #000;
+  width: 100px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.stopwatch {
+  text-align: center;
+  background-color: #2f2e2e;
+  border: 5px dotted #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 300px;
+  display: flex;
+}
+
+h2 {
+  font-size: 30px;
+}
+/*# sourceMappingURL=day10.3a01df49.css.map */

@@ -1,0 +1,25 @@
+body {
+  background-color: #000;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+button {
+  color: #fff;
+  background-color: orange;
+  margin-right: 10px;
+  font-size: 30px;
+}
+
+.box {
+  text-align: center;
+  background-color: #fff;
+  width: 400px;
+  height: 200px;
+  margin-top: 200px;
+  padding: 50px;
+}
+/*# sourceMappingURL=counter-app.3a01df49.css.map */

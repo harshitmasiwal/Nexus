@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    background-color: orange;
+    color: white;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.box{
+    margin-top: 200px;
+    background-color: white;
+    height: 200px;
+    width: 400px;
+    text-align: center;
+    padding: 50px;
+}
+

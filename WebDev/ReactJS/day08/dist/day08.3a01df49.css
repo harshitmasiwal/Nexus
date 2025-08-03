@@ -1,0 +1,21 @@
+body {
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+  background-color: gray;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.box {
+  background-color: #000;
+  width: 1200px;
+  height: 200px;
+  padding: 30px;
+  font-size: 25px;
+}
+/*# sourceMappingURL=day08.3a01df49.css.map */
