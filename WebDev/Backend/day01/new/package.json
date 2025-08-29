@@ -1,0 +1,12 @@
+{
+  "name": "new",
+  "version": "1.0.0",
+  "description": "if hamkoo use karna hai normal import export to hme phele js wali file ka extention ko mjs karna padega ya firr",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

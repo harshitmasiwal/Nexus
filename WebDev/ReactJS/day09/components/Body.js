@@ -40,7 +40,7 @@ function Body(){
                 setNum(e.target.value)
             }}></input>
             <button className="btn" onClick={()=>{
-                getData()
+                getData2()
             }}>Search</button>
         </div>
 

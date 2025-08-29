@@ -18534,7 +18534,7 @@ function Body() {
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         className: "btn",
                         onClick: ()=>{
-                            getData();
+                            getData2();
                         },
                         children: "Search"
                     }, void 0, false, {
