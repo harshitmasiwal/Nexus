@@ -2,7 +2,7 @@
 
 const {MongoClient} = require('mongodb')
 
-const url = "mongodb+srv://harshit_masiwal:Harshit%4012@masiwalcluster.sqljlah.mongodb.net/"
+const url = "mongo_db_uri"
 
 const client = new MongoClient(url) 
 const dbName = "Nexus"

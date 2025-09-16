@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const url = "mongodb+srv://harshit_masiwal:Harshit%4012@masiwalcluster.sqljlah.mongodb.net/Nexus"
+const url = "mongo_db_uri/Nexus"
 
 const main = async ()=>{
 

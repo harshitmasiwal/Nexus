@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const url =
-  "mongodb+srv://harshit_masiwal:Harshit%4012@masiwalcluster.sqljlah.mongodb.net/day15";
+  "mongo_db_uri";
 
 async function main() {
   await mongoose.connect(url);
