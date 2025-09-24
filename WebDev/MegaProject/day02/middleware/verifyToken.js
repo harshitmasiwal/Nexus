@@ -1,0 +1,36 @@
+const jwt = require('jsonwebtoken')
+const { redisClient } = require('../config/redis')
+
+
+const verifyToken = async (req,res,next) => {
+
+
+    try{
+
+
+        if(!req.cookies.token){
+            throw new Error("login first (no token is provided)")
+        }
+        
+        const token = req.cookies.token
+        const payload = jwt.verify(token,process.env.JWT_SECRET)
+        
+        //check the token is expired in redis
+        const isBlocked = await redisClient.exists(`token:${token}`)
+        if(isBlocked){
+            throw new Error("token is expired (re-login)")
+        }
+
+        res.result = payload
+        next()
+
+    }
+    catch(err){
+        res.send("error : " + err.message)
+    }
+
+    
+
+}
+
+module.exports = verifyToken

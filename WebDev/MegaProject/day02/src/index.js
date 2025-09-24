@@ -1,0 +1,39 @@
+const express = require('express')
+const app = express()
+require('dotenv').config()
+const {connectMongo} = require('../config/db')
+const cookieParser = require("cookie-parser")
+const authRouter  = require('../routes/userAuth')
+const { connectRedis } = require('../config/redis')
+
+app.use(express.json())
+app.use(cookieParser())
+ 
+app.get('/',(req,res)=>{
+    res.send("working")
+})
+
+app.use('/user',authRouter)
+
+
+
+const startServer = async ()=>{
+
+    try{
+        await connectMongo()
+        console.log("DB connected")
+
+        await connectRedis()
+        console.log("redis connected")
+
+        app.listen(process.env.PORT,()=>{
+        console.log("Server is running on port "+process.env.PORT)
+})
+    }
+    catch(err){
+        console.log("Error : " + err.message)
+    }
+    
+}
+
+startServer()

@@ -1,0 +1,83 @@
+const { redisClient } = require('../config/redis')
+const User = require('../model/user')
+const getToken = require('../utils/getToken')
+const validate = require('../utils/validate')
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
+
+//here the user data will be authenticated 
+
+const register = async (req,res,next) =>{
+
+    try{
+
+        //validate data 
+        validate(req.body)
+
+        //hash the user password
+        const salt = await bcrypt.genSalt(10)
+        const genHash = await bcrypt.hash(req.body.password,salt)
+        req.body.password = genHash
+        req.body.role = "user"
+        
+        //if user email exist he will be handled below
+        await User.create(req.body)
+
+        //find the user email in db
+        const user = await User.findOne({emailID : req.body.emailID})
+
+        //genrate the cookie 
+        const payload = {emailID : user.emailID , _id : user._id}
+        const token = getToken(payload)
+
+        //set the cookie for the user 
+        res.cookie("token",token)
+
+        res.status(201).send("user created sucessfully")
+
+    }
+    catch(err){
+        res.status(400).send("error : " + err.message)
+    }
+
+}
+
+
+const login = (req,res)=>{
+
+    res.send("okay")
+
+}
+
+
+const logout = async (req,res) => {
+    
+    try{
+
+        const token = req.cookies.token 
+        //for getting the exp time of token 
+        const payload = jwt.decode(token)
+
+
+        //putting it into redis marking invalid
+        await redisClient.set(`token:${token}`,"invalid")
+        await redisClient.expireAt(`token:${token}`,payload.exp+10)
+
+
+        //removing the cookie form the frontend
+        res.cookie("token",null,{expires : new Date(Date.now())})
+        res.status(200).send("logout sucessfull")
+
+    }
+    catch(err){
+        res.status(400).send("error : " + err.message)
+    }
+
+}
+
+
+module.exports = {
+    register,
+    login,
+    logout
+}

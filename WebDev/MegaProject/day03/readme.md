@@ -1,0 +1,1 @@
+making of adminRegister route so it can register any new admin and new user by itself

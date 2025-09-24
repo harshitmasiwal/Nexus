@@ -1,0 +1,2 @@
+making the route and setup judege0 for creating the problem by admin 
+the problem is also verifed first by running all the visible testcases then only it is stored in the database (added the 3 languages c++ , java , javascript)
