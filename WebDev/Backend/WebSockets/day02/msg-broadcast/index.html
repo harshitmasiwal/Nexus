@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="margin: 10px">CHAT APP</h1>
+
+    <div
+      id="chat-history"
+      style="
+        background-color: black;
+        color: white;
+        height: 50vh;
+        width: 50vb;
+        margin: 10px;
+        font-size: larger;
+        padding: 10px;
+      "
+    ><ul id="chats">
+
+    </ul></div>
+    <input
+      style="margin: 10px; font-size: large; padding: 2px"
+      type="text"
+      placeholder="type your message here"
+      id="msg-input"
+    />
+    <button
+      style="margin: 10px; font-size: large; padding: 2px"
+      onclick="sendMessage()"
+    >
+      SEND
+    </button>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+      console.log(socket);
+
+      console.log(socket.id); //when socket initially was not connected
+
+      const msgBox = document.getElementById("chat-history");
+      const msgInput = document.getElementById("msg-input");
+      const chatList = document.getElementById("chats")
+
+      function sendMessage() {
+        const msg = msgInput.value;
+        console.log(msg);
+        socket.emit("msg",msg)
+        const chat = document.createElement('li')
+        chat.style.color = "blue"
+        chat.innerText = msg
+        chatList.append(chat)
+        msgInput.value = ''
+      }
+
+      socket.on("connect", () => {
+        console.log(socket.id); //at this movement socket gets connected
+      });
+
+      socket.on("new_msg",(data)=>{
+        const chat = document.createElement('li')
+        chat.innerText = data
+        // console.log(chat)
+        chatList.append(chat)
+      })
+    </script>
+  </body>
+</html>

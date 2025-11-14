@@ -1,0 +1,1 @@
+websockets are used for the live text msg forwarding in groups , indivisual like the whatsapp , discord 

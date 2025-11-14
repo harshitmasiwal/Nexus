@@ -1,0 +1,1 @@
+cors issue resloved

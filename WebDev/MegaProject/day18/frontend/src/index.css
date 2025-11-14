@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+.input:focus,
+.input:focus-within {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+
+
